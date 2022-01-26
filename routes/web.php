@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CoursesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -23,3 +24,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('redirects', [HomeController::class, 'index']);
+Route::resource('courses/list', CoursesController::class);
+//Route::post('courses', [App\Http\Controllers\CoursesController::class, 'store'])->name('store');
+
+//Views
+Route::get('lecturer/dashboard', 'HomeController@index')->name('lecturer.dashboard');
+Route::get('courses/list', 'CoursesController@list')->name('courses.list');
+Route::post('courses/store', 'CoursesController@store')->name('courses.store');
