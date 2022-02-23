@@ -21,7 +21,8 @@ Route::middleware(['auth:api'])->group(function () {
     Route::get('user','StudentController@index');
     Route::get('get_student_locations','StudentLocationController@show');
     Route::post('student_locations','StudentLocationController@index');
-    Route::post('attendance','AttendanceController@index');
-    Route::resource('course', CoursesController::class);
+    Route::post('attendance','AttendanceController@attendances_api');
+    Route::get('course','CoursesController@courses_api');
+    // Route::resource('course', CoursesController::class);
     Route::post('logout','StudentController@logout');
 });

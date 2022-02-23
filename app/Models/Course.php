@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Attendance;
 
 class Course extends Model
 {
@@ -14,7 +15,13 @@ class Course extends Model
         'course',
         'course_url_link',
         'time_start',
-        'time_end',
+        'time_end'
     ]; 
+
+    public function attendance()
+    {
+        return $this->hasMany('App\Models\Attendance');
+        
+    }
 
 }

@@ -26,12 +26,30 @@
                          </a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link {{ 'courses/list' == request()->path() ? 'active' : '' }}" href="{{ url('courses/list') }}">
-                             <i class="fa fa-book text-orange"></i>
-                             <span class="nav-link-text">{{ __('Student Attendance') }}</span>
+                         <a class="nav-link {{ 'attendances/att_list' == request()->path() ? 'active' : '' }}" href="{{ url('attendances/att_list') }}">
+                             <i class="fa fa-users text-blue"></i>
+                             <span class="nav-link-text">{{ __('Student Attendances') }}</span>
                          </a>
                      </li>
-                    
+                </ul>
+
+                <hr class="my-3">
+
+<h6 class="navbar-heading p-0 text-muted">
+<span class="docs-normal">Setting</span>
+</h6>
+
+<ul class="navbar-nav mb-md-3">
+<li class="nav-item">
+    <a class="nav-link {{ 'user/profile' == request()->path() ? 'active' : '' }}" href="{{ route('profile.show') }}">
+        <i class="fa fa-user text-black"></i>
+        <span class="nav-link-text">{{ __('Your Profile') }}</span>
+    </a>
+</li>
+            </ul>
+
+
+                  
              </div>
          </div>
      </div>
@@ -248,7 +266,7 @@
                              aria-expanded="false">
                              <div class="media align-items-center">
                                  <span class="avatar avatar-sm rounded-circle">
-                                     <img alt="Image placeholder" src="../assets/img/theme/team-4.jpg">
+                                     <img alt="Image placeholder" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxHWFss7T4f3QifjwCTUJ-VGqffPBBDI1VlQ&usqp=CAU">
                                  </span>
                                  <div class="media-body  ml-2  d-none d-lg-block">
                                      <span class="mb-0 text-sm  font-weight-bold">{{ Auth::user()->name }}</span>

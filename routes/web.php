@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CoursesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +24,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('redirects', [HomeController::class, 'index']);
 Route::resource('courses/list', CoursesController::class);
+Route::resource('attendances/att_list', AttendanceController::class);
+Route::get('attendances/att_spec_list/{id}', "CoursesController@show");
+Route::get('/export', [App\http\Controllers\AttendanceController::class, 'export']);
+
+
+
 //Route::post('courses', [App\Http\Controllers\CoursesController::class, 'store'])->name('store');
 
 //Views
 Route::get('lecturer/dashboard', 'HomeController@index')->name('lecturer.dashboard');
-Route::get('courses/list', 'CoursesController@list')->name('courses.list');
-Route::post('courses/store', 'CoursesController@store')->name('courses.store');
+
+
+

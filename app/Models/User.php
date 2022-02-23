@@ -62,8 +62,14 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    // public function attendance()
+    // {
+    //     return $this->hasMany('Attendance');
+    // }
+
     public function attendance()
     {
-        return $this->hasMany('Attendance');
+        return $this->hasMany('App\Models\Attendance');
+        
     }
 }

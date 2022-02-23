@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\User;
 use App\Models\Attendance;
 use App\Models\StudentLocation;
@@ -10,9 +11,7 @@ use Auth;
 
 class StudentController extends Controller
 {
-
-
-    // public function index(Request $request)
+      // public function index(Request $request)
     // {
 
 
@@ -116,5 +115,4 @@ class StudentController extends Controller
  
          return response()->json(['message' => 'success']);
      }
-
 }
